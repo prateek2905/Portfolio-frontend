@@ -40,6 +40,40 @@ export const projects = [
     role: 'Creator',
     stack: 'Next.js, Go, PostgreSQL, Prisma, WebSockets',
   },
+  {
+    name: 'GitHub Automation Bot',
+    cat: 'Project · Automation',
+    year: 'Side project',
+    desc: 'Event-driven bot that reacts to GitHub webhooks using rules set in a dashboard: auto-label, comment or ping Slack. Persist-then-ACK ingest, a retrying worker and two-level idempotency keep every action exactly-once. Live at prateek-gh-bot.vercel.app.',
+    role: 'Creator',
+    stack: 'React, Node.js, Express, Prisma, PostgreSQL, GitHub App',
+  },
+  {
+    name: 'PayFlow',
+    cat: 'Project · Fintech',
+    year: 'Side project',
+    desc: 'Peer-to-peer payments app with spending analytics and budgets. Atomic MongoDB-session transfers, tagged transactions, and hand-built SVG charts for daily spend and category breakdown.',
+    role: 'Creator',
+    stack: 'React, Node.js, Express, MongoDB, JWT, Tailwind',
+  },
+  {
+    name: 'Esports Coach',
+    cat: 'Project · AI',
+    year: 'Live soon',
+    soon: true,
+    desc: 'RAG-powered coaching webapp: log in with your game ID, pull your stats and match history, and get a Gemini-generated report on how to improve. Redis caches logins and game data for fast responses.',
+    role: 'Creator',
+    stack: 'React, Tailwind, RAG, Redis, Gemini API',
+  },
+  {
+    name: 'Journaling Habits',
+    cat: 'Project · Mobile',
+    year: 'Live soon',
+    soon: true,
+    desc: 'Offline-first Flutter bullet journal on a hand-drawn grid-paper look: tasks, moments, a habit grid, sleep chart, Apple Health / Health Connect sleep sync and home-screen widgets.',
+    role: 'Creator',
+    stack: 'Flutter, Dart, Hive, Provider, WidgetKit',
+  },
 ]
 
 // Card gradient placeholder: odd cards cyan, even cards magenta, both fading to deep indigo

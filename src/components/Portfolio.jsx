@@ -145,6 +145,11 @@ function Title({ i, p, pos, intro, g }) {
   return (
     <motion.div style={{ x: g.tx - g.tw / 2, y, yPercent: g.mob ? -50 : 0, opacity, display, width: g.tw, height: g.mob ? 'auto' : g.ch }} className="pointer-events-none absolute left-0 top-0 flex flex-col justify-center text-center will-change-transform">
       <div className="text-xs text-cyber">// {p.cat}</div>
+      {p.soon && (
+        <div className="mx-auto mt-2 w-fit rounded-sm border border-hot px-2 py-0.5 text-[10px] font-bold uppercase tracking-[.16em] text-hot shadow-[0_0_10px_rgba(255,43,214,.45)]">
+          Live soon...
+        </div>
+      )}
       <div className="mt-2 font-display text-[clamp(18px,1.6vw,24px)] font-extrabold leading-tight tracking-[-0.02em]" style={{ textShadow: '1.5px 0 #ff2bd6, -1.5px 0 #00f0ff' }}>{p.name}</div>
       <div className="mx-auto my-3 h-0.5 w-7 bg-gradient-to-r from-cyber to-hot" />
       <div className="text-balance text-[13px] leading-relaxed text-ink-100">
