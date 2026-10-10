@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a0b3a"/>
+      <stop offset="1" stop-color="#05030f"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#00f0ff" stroke-opacity=".08"/>
+    </pattern>
+    <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="1" fill="#fff" fill-opacity=".05"/>
+    </pattern>
+    <pattern id="hatch" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="7" height="14" fill="#ff2bd6" fill-opacity=".9"/>
+      <rect x="7" width="7" height="14" fill="#14061f"/>
+    </pattern>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect width="1200" height="900" fill="url(#grid)"/>
+
+  <!-- fake document lines, blacked out -->
+  <g fill="#0a0716" stroke="#00f0ff" stroke-opacity=".25">
+    <rect x="90" y="110" width="360" height="26"/>
+    <rect x="90" y="160" width="620" height="26"/>
+    <rect x="90" y="210" width="480" height="26"/>
+    <rect x="90" y="260" width="700" height="26"/>
+    <rect x="90" y="310" width="300" height="26"/>
+    <rect x="90" y="620" width="540" height="26"/>
+    <rect x="90" y="670" width="760" height="26"/>
+    <rect x="90" y="720" width="420" height="26"/>
+    <rect x="90" y="770" width="640" height="26"/>
+  </g>
+  <g font-family="'Courier New', monospace" font-size="15" fill="#00f0ff" fill-opacity=".7">
+    <text x="90" y="80">// INTRANET.NODE_07 :: ACCESS LEVEL 5</text>
+    <text x="840" y="80">SEC-CLASS: RESTRICTED</text>
+    <text x="90" y="830">&gt; ENDPOINTS: ████ · USERS: ███ · HOST: ██.██.██.██</text>
+  </g>
+
+  <!-- corner brackets -->
+  <g fill="none" stroke-width="5" stroke-linecap="square">
+    <path d="M50 120V50H120" stroke="#00f0ff"/>
+    <path d="M1150 780V850H1080" stroke="#ff2bd6"/>
+  </g>
+
+  <!-- redacted stamp -->
+  <g transform="translate(600 450) rotate(-7)" filter="url(#glow)">
+    <rect x="-470" y="-130" width="940" height="260" fill="#0a0716" stroke="#ff2bd6" stroke-width="6"/>
+    <rect x="-470" y="-130" width="940" height="22" fill="url(#hatch)"/>
+    <rect x="-470" y="108" width="940" height="22" fill="url(#hatch)"/>
+    <text x="3" y="38" text-anchor="middle" font-family="Impact, 'Arial Black', sans-serif" font-size="150" letter-spacing="14" fill="#00f0ff" fill-opacity=".85">REDACTED</text>
+    <text x="-3" y="35" text-anchor="middle" font-family="Impact, 'Arial Black', sans-serif" font-size="150" letter-spacing="14" fill="#ff2bd6" fill-opacity=".85">REDACTED</text>
+    <text x="0" y="36" text-anchor="middle" font-family="Impact, 'Arial Black', sans-serif" font-size="150" letter-spacing="14" fill="#fff">REDACTED</text>
+  </g>
+  <g transform="translate(600 450) rotate(-7)" font-family="'Courier New', monospace" font-weight="bold" text-anchor="middle">
+    <text y="-150" font-size="22" fill="#ff2bd6" letter-spacing="8">CONFIDENTIAL // NO EXTERNAL EXPOSURE</text>
+  </g>
+
+  <rect width="1200" height="900" fill="url(#scan)"/>
+</svg>

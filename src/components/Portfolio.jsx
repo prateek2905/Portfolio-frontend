@@ -114,7 +114,11 @@ function Card({ i, p, pos, intro, g }) {
       className="pointer-events-none absolute left-0 top-0 overflow-hidden rounded-md border border-cyber/55 shadow-card will-change-transform"
     >
       {p.image ? (
-        <img src={p.image} alt={p.name} className="absolute inset-0 h-full w-full object-cover" />
+        <>
+          {/* blurred fill behind, full uncropped image on top */}
+          <img src={p.image} alt="" aria-hidden className="absolute inset-0 h-full w-full scale-110 object-cover opacity-60 blur-xl" />
+          <img src={p.image} alt={p.name} className="absolute inset-0 h-full w-full object-contain" />
+        </>
       ) : (
         <>
           <div className="absolute inset-0" style={{ background: cardGradient(i) }} />

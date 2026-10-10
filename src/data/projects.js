@@ -1,3 +1,11 @@
+import cosketch from '../assets/cosketch.png'
+import ghbot from '../assets/ghbot.png'
+import payflowtrack from '../assets/payflowtrack.png'
+import journaling from '../assets/journaling.png'
+import vr from '../assets/vr.png'
+import redacted from '../assets/redacted.svg'
+import esports from '../assets/esports.png'
+
 // Source: resume. If `image` is set, it renders in the card instead of the gradient.
 export const projects = [
   {
@@ -6,6 +14,7 @@ export const projects = [
     year: '2025 – now',
     desc: 'Full-stack intranet portal for 200+ internal users: real-time messaging, file sharing, complaint tracking and reports. Deployed on internal servers with zero external exposure.',
     role: 'Software Engineer, DRDO',
+    image: redacted,
     stack: 'HTML, CSS, Node.js',
   },
   {
@@ -14,6 +23,7 @@ export const projects = [
     year: '2025 – now',
     desc: 'Immersive Unity simulator recreating a real-world location to train personnel in emergency rescue, with OpenXR for cross-device VR support.',
     role: 'Software Engineer, DRDO',
+    image: vr,
     stack: 'Unity, C#, OpenXR',
   },
   {
@@ -38,6 +48,7 @@ export const projects = [
     year: '2024',
     desc: 'Collaborative whiteboard with shared rooms and live shape sync. Realtime server rebuilt in Go with a lock-free, channel-based hub.',
     role: 'Creator',
+    image: cosketch,
     stack: 'Next.js, Go, PostgreSQL, Prisma, WebSockets',
   },
   {
@@ -46,14 +57,16 @@ export const projects = [
     year: 'Side project',
     desc: 'Event-driven bot that reacts to GitHub webhooks using rules set in a dashboard: auto-label, comment or ping Slack. Persist-then-ACK ingest, a retrying worker and two-level idempotency keep every action exactly-once. Live at prateek-gh-bot.vercel.app.',
     role: 'Creator',
+    image: ghbot,
     stack: 'React, Node.js, Express, Prisma, PostgreSQL, GitHub App',
   },
   {
-    name: 'PayFlow',
+    name: 'PayFlowTrack',
     cat: 'Project · Fintech',
     year: 'Side project',
     desc: 'Peer-to-peer payments app with spending analytics and budgets. Atomic MongoDB-session transfers, tagged transactions, and hand-built SVG charts for daily spend and category breakdown.',
     role: 'Creator',
+    image: payflowtrack,
     stack: 'React, Node.js, Express, MongoDB, JWT, Tailwind',
   },
   {
@@ -63,6 +76,7 @@ export const projects = [
     soon: true,
     desc: 'RAG-powered coaching webapp: log in with your game ID, pull your stats and match history, and get a Gemini-generated report on how to improve. Redis caches logins and game data for fast responses.',
     role: 'Creator',
+    image: esports,
     stack: 'React, Tailwind, RAG, Redis, Gemini API',
   },
   {
@@ -72,6 +86,7 @@ export const projects = [
     soon: true,
     desc: 'Offline-first Flutter bullet journal on a hand-drawn grid-paper look: tasks, moments, a habit grid, sleep chart, Apple Health / Health Connect sleep sync and home-screen widgets.',
     role: 'Creator',
+    image: journaling,
     stack: 'Flutter, Dart, Hive, Provider, WidgetKit',
   },
 ]
