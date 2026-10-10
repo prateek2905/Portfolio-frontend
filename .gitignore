@@ -1,0 +1,11 @@
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+
+# design handoff + Claude tooling
+design_handoff_portfolio_carousel/
+.claude/
+.code-review-graph/
+CLAUDE.md
