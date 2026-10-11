@@ -113,6 +113,12 @@ export const profile = {
   role: 'Software Engineer',
   email: 'prateekmishra2927@gmail.com',
   resume: '/Prateek_Mishra_Resume.pdf',
+  skills: [
+    { label: 'frontend', items: 'React.js, Next.js, Vue.js, Tailwind' },
+    { label: 'backend', items: 'Node.js, Go, JavaScript, TypeScript' },
+    { label: 'data', items: 'PostgreSQL, MongoDB, Redis' },
+    { label: 'other', items: 'Unity, C#, Flutter, RAG, AWS' },
+  ],
   about:
     'Full-stack software engineer at DRDO, building secure, scalable web platforms and immersive simulations.\n\nI work across Next.js, React, Nuxt and Node.js, and like realtime collaborative systems, server-rendered consumer platforms and locked-down intranet tools.\n\nFreelancing with Bilzo Labs on the side. B.E. Computer Science, Chandigarh University. GATE qualified (CS&IT).',
   links: [

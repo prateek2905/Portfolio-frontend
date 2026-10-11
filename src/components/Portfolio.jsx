@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { Fragment, useEffect, useRef, useState } from 'react'
 import { motion, animate, useMotionValue, useTransform, useMotionValueEvent, AnimatePresence } from 'motion/react'
 import { projects, profile, cardGradient } from '../data/projects'
 import { useCarousel, wrapDelta, mod } from '../hooks/useCarousel'
@@ -207,6 +207,7 @@ function Header({ pos, target, onHome, onPanel }) {
           <a href="#work" onClick={(e) => { e.preventDefault(); onHome() }} className="!text-cyber">&gt; ./work</a>
           <a href="#about" onClick={(e) => { e.preventDefault(); onPanel('about') }} className="!text-ink-300 hover:!text-white">./about</a>
           <a href="#contact" onClick={(e) => { e.preventDefault(); onPanel('contact') }} className="!text-ink-300 hover:!text-white">./contact</a>
+          <a href={profile.resume} target="_blank" rel="noreferrer" className="!text-ink-300 hover:!text-white">./resume</a>
         </nav>
       </motion.div>
       <div className="absolute right-[clamp(16px,2.4vw,36px)] top-[clamp(14px,2.2vw,32px)] z-20 text-right text-xs leading-relaxed">
@@ -286,11 +287,17 @@ function Panel({ panel, onClose }) {
             {panel === 'about' ? (
               <>
                 <p className="whitespace-pre-line text-base leading-relaxed text-ink-200">{profile.about}</p>
+                <dl className="grid grid-cols-[84px_1fr] gap-x-3 gap-y-2 text-sm">
+                  {profile.skills.map((k) => (
+                    <Fragment key={k.label}><dt className="text-cyber">› {k.label}</dt><dd className="text-ink-100">{k.items}</dd></Fragment>
+                  ))}
+                </dl>
                 <a href={profile.resume} target="_blank" rel="noreferrer" className="mt-2 w-fit rounded-sm border border-cyber px-4 py-2 text-sm font-bold uppercase tracking-[.12em] !text-cyber hover:bg-cyber/10">Resume ↗</a>
               </>
             ) : (
               <ul className="flex flex-col gap-3 break-all text-base leading-relaxed">
                 {profile.links.map((l) => <li key={l.href}><a href={l.href} target="_blank" rel="noreferrer">{l.label}</a></li>)}
+                <li><a href={profile.resume} target="_blank" rel="noreferrer">resume.pdf ↗</a></li>
               </ul>
             )}
           </motion.aside>
