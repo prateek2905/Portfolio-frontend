@@ -4,6 +4,8 @@ import payflowtrack from '../assets/payflowtrack.png'
 import journaling from '../assets/journaling.png'
 import vr from '../assets/vr.png'
 import redacted from '../assets/redacted.svg'
+import wishd from '../assets/wishd.png'
+import bilzo from '../assets/bilzo.png'
 import esports from '../assets/esports.png'
 
 // Source: resume. If `image` is set, it renders in the card instead of the gradient.
@@ -32,6 +34,7 @@ export const projects = [
     year: '2024 – now',
     desc: 'Global event gifting and registry platform for Bilzo Labs. SSR guest pages load in under 2 seconds on 4G.',
     role: 'Freelance Software Engineer',
+    image: wishd,
     stack: 'Nuxt 3, Fastify, MongoDB Atlas, AWS',
   },
   {
@@ -40,6 +43,7 @@ export const projects = [
     year: '2024 – now',
     desc: 'Contributed to the consumer-facing application frontend, building UI features and wiring client-side flows to existing backend services.',
     role: 'Freelance Software Engineer',
+    image: bilzo,
     stack: 'React, Next.js',
   },
   {
@@ -49,6 +53,8 @@ export const projects = [
     desc: 'Collaborative whiteboard with shared rooms and live shape sync. Realtime server rebuilt in Go with a lock-free, channel-based hub.',
     role: 'Creator',
     image: cosketch,
+    live: 'https://cosketch-frontend.onrender.com/',
+    repo: 'https://github.com/prateek2905/CoSketch',
     stack: 'Next.js, Go, PostgreSQL, Prisma, WebSockets',
   },
   {
@@ -58,6 +64,8 @@ export const projects = [
     desc: 'Event-driven bot that reacts to GitHub webhooks using rules set in a dashboard: auto-label, comment or ping Slack. Persist-then-ACK ingest, a retrying worker and two-level idempotency keep every action exactly-once. Live at prateek-gh-bot.vercel.app.',
     role: 'Creator',
     image: ghbot,
+    live: 'https://prateek-gh-bot.vercel.app/',
+    repo: 'https://github.com/prateek2905/Github-Automation-Bot',
     stack: 'React, Node.js, Express, Prisma, PostgreSQL, GitHub App',
   },
   {
@@ -67,6 +75,8 @@ export const projects = [
     desc: 'Peer-to-peer payments app with spending analytics and budgets. Atomic MongoDB-session transfers, tagged transactions, and hand-built SVG charts for daily spend and category breakdown.',
     role: 'Creator',
     image: payflowtrack,
+    live: 'https://payflowtrack.netlify.app/',
+    repo: 'https://github.com/prateek2905/PayFlow-Backend',
     stack: 'React, Node.js, Express, MongoDB, JWT, Tailwind',
   },
   {
@@ -87,6 +97,7 @@ export const projects = [
     desc: 'Offline-first Flutter bullet journal on a hand-drawn grid-paper look: tasks, moments, a habit grid, sleep chart, Apple Health / Health Connect sleep sync and home-screen widgets.',
     role: 'Creator',
     image: journaling,
+    repo: 'https://github.com/prateek2905/JournalingHabits-Flutter',
     stack: 'Flutter, Dart, Hive, Provider, WidgetKit',
   },
 ]
@@ -101,6 +112,7 @@ export const profile = {
   last: 'MISHRA',
   role: 'Software Engineer',
   email: 'prateekmishra2927@gmail.com',
+  resume: '/Prateek_Mishra_Resume.pdf',
   about:
     'Full-stack software engineer at DRDO, building secure, scalable web platforms and immersive simulations.\n\nI work across Next.js, React, Nuxt and Node.js, and like realtime collaborative systems, server-rendered consumer platforms and locked-down intranet tools.\n\nFreelancing with Bilzo Labs on the side. B.E. Computer Science, Chandigarh University. GATE qualified (CS&IT).',
   links: [

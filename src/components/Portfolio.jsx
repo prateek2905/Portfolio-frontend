@@ -146,6 +146,7 @@ function Title({ i, p, pos, intro, g }) {
   // desktop: block spans exactly the card's top..bottom edges; mobile: centred under the card
   const y = useTransform(d, (v) => g.ty - v * g.tsy - (g.mob ? 0 : g.ch / 2))
   const display = useTransform(d, (v) => (Math.abs(v) > 2.7 ? 'none' : 'flex'))
+  const pointerEvents = useTransform(d, (v) => (Math.abs(v) < 0.5 ? 'auto' : 'none'))
   return (
     <motion.div style={{ x: g.tx - g.tw / 2, y, yPercent: g.mob ? -50 : 0, opacity, display, width: g.tw, height: g.mob ? 'auto' : g.ch }} className="pointer-events-none absolute left-0 top-0 flex flex-col justify-center text-center will-change-transform">
       <div className="text-xs text-cyber">// {p.cat}</div>
@@ -160,6 +161,12 @@ function Title({ i, p, pos, intro, g }) {
         {/* the ">" hangs outside the first word so it never shifts the centred text */}
         <span className="relative"><span className="absolute right-full pr-[1ch] text-hot">&gt;</span>{p.desc.split(' ')[0]}</span> {p.desc.split(' ').slice(1).join(' ')}
       </div>
+      {(p.live || p.repo) && (
+        <motion.div style={{ pointerEvents }} className="mt-4 flex justify-center gap-3 text-xs">
+          {p.live && <a href={p.live} target="_blank" rel="noreferrer" className="rounded-sm border border-cyber px-3 py-1 font-bold uppercase tracking-[.12em] !text-cyber hover:bg-cyber/10">Live ↗</a>}
+          {p.repo && <a href={p.repo} target="_blank" rel="noreferrer" className="rounded-sm border border-hot px-3 py-1 font-bold uppercase tracking-[.12em] !text-hot hover:bg-hot/10">GitHub ↗</a>}
+        </motion.div>
+      )}
     </motion.div>
   )
 }
@@ -277,7 +284,10 @@ function Panel({ panel, onClose }) {
               {panel === 'about' ? profile.name : "Let's talk"}
             </h2>
             {panel === 'about' ? (
-              <p className="whitespace-pre-line text-base leading-relaxed text-ink-200">{profile.about}</p>
+              <>
+                <p className="whitespace-pre-line text-base leading-relaxed text-ink-200">{profile.about}</p>
+                <a href={profile.resume} target="_blank" rel="noreferrer" className="mt-2 w-fit rounded-sm border border-cyber px-4 py-2 text-sm font-bold uppercase tracking-[.12em] !text-cyber hover:bg-cyber/10">Resume ↗</a>
+              </>
             ) : (
               <ul className="flex flex-col gap-3 break-all text-base leading-relaxed">
                 {profile.links.map((l) => <li key={l.href}><a href={l.href} target="_blank" rel="noreferrer">{l.label}</a></li>)}
