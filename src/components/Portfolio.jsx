@@ -16,7 +16,7 @@ function useGeo() {
     sx: mob ? w * 0.2 : w * 0.12, // horizontal step per card
     sy: mob ? h * 0.3 : h * 0.31, // vertical step per card
     tx: mob ? w * 0.5 : w * 0.8, // title column centre x
-    ty: mob ? h * 0.78 : cy, // title column centre y
+    ty: mob ? h * 0.72 : cy, // title column centre y
     tw: mob ? w * 0.8 : Math.min(380, w * 0.25),
     tsy: Math.max(h * 0.3, 320), // title/meta vertical step; >= block height so neighbours never overlap
   }
@@ -58,8 +58,8 @@ export default function Portfolio() {
       {projects.map((p, i) => <Title key={'t' + i} i={i} p={p} pos={pos} intro={intro} g={g} />)}
       {!g.mob && projects.map((p, i) => <Meta key={'m' + i} i={i} p={p} pos={pos} intro={intro} g={g} />)}
       <Header pos={pos} target={target} onHome={() => { setPanel(null); target.set(0) }} onPanel={setPanel} />
-      <Counter active={active} />
-      <Footer active={active} />
+      {!g.mob && <Counter active={active} />}
+      <Footer active={active} mob={g.mob} />
       <CrtOverlay />
       <Panel panel={panel} onClose={() => setPanel(null)} />
     </div>
@@ -248,15 +248,15 @@ const ICONS = {
   close: 'M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z',
 }
 
-function Footer({ active }) {
+function Footer({ active, mob }) {
   const link = 'flex items-center gap-1.5'
   return (
-    <div className="absolute inset-x-0 bottom-0 z-[25] flex items-center justify-between gap-3 px-[clamp(16px,2.4vw,36px)] pb-[clamp(12px,1.6vw,22px)] text-xs">
-      <div className="flex items-center gap-4">
+    <div className={'absolute inset-x-0 bottom-0 z-[25] flex items-center gap-3 ' + (mob ? 'justify-end' : 'justify-between') + ' px-[clamp(16px,2.4vw,36px)] pb-[clamp(12px,1.6vw,22px)] text-xs'}>
+      {!mob && <div className="flex items-center gap-4">
         <a href={profile.social.github} className={link}><Icon d={ICONS.github} />git</a>
         <a href={profile.social.linkedin} className={link}><Icon d={ICONS.linkedin} />linkedin</a>
-      </div>
-      <div className="animate-flick tracking-[.1em] text-cyber">idx[{String(active + 1).padStart(2, '0')}/{String(N).padStart(2, '0')}] · ready_</div>
+      </div>}
+      {!mob && <div className="animate-flick tracking-[.1em] text-cyber">idx[{String(active + 1).padStart(2, '0')}/{String(N).padStart(2, '0')}] · ready_</div>}
       <div className="flex items-center gap-2.5 tracking-[.08em] text-ink-300">
         scroll
         <span className="relative h-7 w-px overflow-hidden bg-ink-700"><span className="absolute inset-0 animate-drop bg-hot" /></span>
